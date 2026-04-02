@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete Page</title>
+</head>
+<body>
+<form name="DeleteForm" method="post" action="/address/deleteProc">
+    <fieldset>
+        <legend>주소 삭제</legend>
+        <input type="hidden" name="id" th:value="${address.id}"><br>
+        이름 : <span th:text="${address.name}"></span><br>
+        전화번호 : <span th:text="${address.phone}"></span><br>
+        주소 : <span th:text="${address.address}"></span><br>
+        이메일 : <span th:text="${address.email}"></span><br>
+
+        <button type="submit">주소 삭제</button>
+        <button type="button" th:onclick="|location.href='@{/address/list}'|">목록</button>
+    </fieldset>
+</form>
+</body>
+</html>
+

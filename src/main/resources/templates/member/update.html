@@ -5,11 +5,28 @@
     <title>Update Page</title>
 </head>
 <body>
-<form name="InsertForm" method="post" action="/member/insertProc">
-    아이디 : <input type="text" name="username"><br>
-    이름 : <input type="text" name="name"><br>
-    나이 : <input type="text" name="age"><br>
-    <button type="submit">정보 업데이트</button>
+<form name="Form" method="post" action="/member/updateProc">
+    <fieldset>
+        <legend>회원 정보 수정</legend>
+        <input type="hidden" name="id" th:value="${member.id}"><br>
+        아이디 : <span th:text="${member.username}"></span><br>
+        비밀번호 : <input type="password" name="password" placeholder="비밀번호 확인"><br>
+        이름 : <span th:text="${member.name}"></span><br>
+        주민번호 : <span th:text="${member.ssn}"></span><br>
+        전화번호 : <input type="text" name="phone" th:value="${member.phone}"><br>
+        이메일 : <input type="text" name="email" th:value="${member.email}"><br>
+        주소1 : <input type="text" name="address1" th:value="${member.address1}"><br>
+        주소2 : <input type="text" name="address2" th:value="${member.address2}"><br>
+        주소3 : <input type="text" name="address3" th:value="${member.address3}"><br>
+        주소4 : <input type="text" name="address4" th:value="${member.address4}"><br>
+
+        등급 :
+        <input type="radio" name="grade" value="일반회원" th:checked="${member.grade == '일반회원'}">일반회원&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="radio" name="grade" value="관리자" th:checked="${member.grade == '관리자'}">관리자<br>
+
+        <button type="submit">정보수정</button>
+        <button type="button" th:onclick="|location.href='@{/member/list}'|">뒤로가기</button>
+    </fieldset>
 </form>
 </body>
 </html>

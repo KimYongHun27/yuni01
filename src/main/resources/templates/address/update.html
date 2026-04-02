@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Page</title>
+</head>
+<body>
+<form name="updateForm" method="post" action="/address/updateProc">
+    <fieldset>
+        <legend>주소 수정</legend>
+        <input type="hidden" name="id" th:value="${address.id}"><br>
+        이름 : <input type="text" name="name" th:value="${address.name}"></input><br>
+        전화번호 : <input type="text" name="phone" th:value="${address.phone}"></input><br>
+        주소 : <input type="text" name="address" th:value="${address.address}"></input><br>
+        이메일 : <input type="text" name="email" th:value="${address.email}"></input><br>
+
+        <button type="submit">주소정보수정</button>
+        <button type="button" th:onclick="|location.href='@{/address/list}'|">뒤로가기</button>
+    </fieldset>
+</form>
+</body>
+</html>

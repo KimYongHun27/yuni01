@@ -6,18 +6,28 @@ import com.meta12.yuni01.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Optional;
+
 @RequiredArgsConstructor
 @Service
 public class MemberService {
 
     private final MemberRepository memberRepository;
 
-    public void getSelectAll(){
-        System.out.println("- get select all -");
+    public List<Member> getSelectAll(){
+        return memberRepository.findAll();
     }
 
-    public void getSelectOne(){
-        System.out.println("- get select one -");
+    public Member getSelectOne(Long id){
+            Optional<Member> optionalMember = memberRepository.findById(id);
+            Member member = null;
+
+            if (optionalMember.isPresent()){
+                member = optionalMember.get();
+            }
+
+            return member;
     }
 
     public void setInsert(MemberDTO memberDTO){
@@ -38,11 +48,28 @@ public class MemberService {
         memberRepository.save(member);
     }
 
-    public void setUpdate(){
-        System.out.println("- set update -");
+    public void setUpdate(MemberDTO memberDTO){
+        Member member = new Member();
+        member.setId(memberDTO.getId());
+        member.setUsername(memberDTO.getUsername());
+        member.setPassword(memberDTO.getPassword());
+        member.setPasswordChk(memberDTO.getPasswordChk());
+        member.setName(memberDTO.getName());
+        member.setSsn(memberDTO.getSsn());
+        member.setPhone(memberDTO.getPhone());
+        member.setEmail(memberDTO.getEmail());
+        member.setAddress1(memberDTO.getAddress1());
+        member.setAddress2(memberDTO.getAddress2());
+        member.setAddress3(memberDTO.getAddress3());
+        member.setAddress4(memberDTO.getAddress4());
+        member.setGrade(memberDTO.getGrade());
+
+        memberRepository.save(member);
     }
 
-    public void setDelete(){
-        System.out.println("- set delete -");
+    public void setDelete(MemberDTO memberDTO){
+        Member member = new Member();
+        member.setId(memberDTO.getId());
+        memberRepository.delete(member);
     }
 }

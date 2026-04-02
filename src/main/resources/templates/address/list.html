@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List Page</title>
+</head>
+<body>
+<div>
+    |
+    <a href="/">Home</a>
+    |
+    <a href="/member/list">회원관리</a>
+    |
+    <a href="/address/list">메모장</a>
+    |
+    <a href="/address/list">주소</a>
+    |
+</div>
+    <h1>주소 목록</h1>
+<table border="1">
+    <tr>
+        <th>번호</th>
+        <td>이름</td>
+    </tr>
+
+    <tr th:each="address : ${list}">
+        <th th:text="${address.id}"></th>
+        <td>
+            <a th:href="@{|/address/view/${address.id}|}" th:text="${address.name}"></a>
+        </td>
+    </tr>
+</table>
+
+<br>
+|
+<a href="/address/insert">등록</a>
+|
+<br>
+</body>
+</html>

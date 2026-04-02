@@ -5,6 +5,43 @@
     <title>List Page</title>
 </head>
 <body>
+<div>
+    |
+    <a href="/">Home</a>
+    |
+    <a href="/member/list">회원관리</a>
+    |
+    <a href="/memo/list">메모장</a>
+    |
+    <a href="/address/list">주소</a>
+    |
+</div>
+    <h1>회원 목록</h1>
+<table border="1">
+    <tr>
+        <th>회원번호</th>
+        <td>아이디</td>
+        <td>이름</td>
+        <td>전화번호</td>
+        <td>등급</td>
+    </tr>
 
+    <tr th:each="member : ${list}">
+        <th th:text="${member.id}"></th>
+        <td>
+            <a th:href="@{|/member/view/${member.id}|}" th:text="${member.username}"></a>
+        </td>
+        <td th:text="${member.name}"></td>
+        <td th:text="${member.phone}"></td>
+        <td th:text="${member.grade}"></td>
+
+    </tr>
+</table>
+
+<br>
+|
+<a href="/member/insert">등록</a>
+|
+<br>
 </body>
 </html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>View Page</title>
+</head>
+<body>
+<h1>메모장 상세보기</h1>
+
+글 번호 : <span th:text="${memo.id}"></span><br>
+제목 :<span th:text="${memo.subject}"></span><br>
+내용 :<span th:text="${memo.content}"></span><br>
+작성자 :<span th:text="${memo.writer}"></span><br>
+
+
+<button type="button" onclick="location.href ='/memo/list';">뒤로가기</button>
+
+<a href="/memo/list">목록</a>
+<a th:href="@{|/memo/update/${memo.id}|}">수정</a>
+<a th:href="@{|/memo/delete/${memo.id}|}">삭제</a>
+
+</body>
+</html>

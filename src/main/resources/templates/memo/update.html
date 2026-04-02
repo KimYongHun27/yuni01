@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Page</title>
+</head>
+<body>
+<form name="Form" method="post" action="/memo/updateProc">
+    <fieldset>
+        <legend>메모장 수정</legend>
+        <input type="hidden" name="id" th:value="${memo.id}"><br>
+        제목 : <input type="text" name="subject" th:value="${memo.subject}"></input><br>
+        내용 : <textarea name="content" style="width:300px; height:500px;">[[${memo.content}]]</textarea><br>
+        작성자 : <input type="text" name="writer" th:value="${memo.writer}"></input><br>
+
+        <button type="submit">정보수정</button>
+        <button type="button" th:onclick="|location.href='@{/memo/list}'|">뒤로가기</button>
+    </fieldset>
+</form>
+</body>
+</html>

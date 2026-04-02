@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>View Page</title>
+</head>
+<body>
+<h1>주소 상세보기</h1>
+
+번호 : <span th:text="${address.id}"></span><br>
+이름 :<span th:text="${address.name}"></span><br>
+전화번호 :<span th:text="${address.phone}"></span><br>
+주소 :<span th:text="${address.address}"></span><br>
+이메일 :<span th:text="${address.email}"></span><br>
+
+
+<button type="button" onclick="location.href ='/address/list';">뒤로가기</button>
+
+<a href="/address/list">목록</a>
+<a th:href="@{|/address/update/${address.id}|}">수정</a>
+<a th:href="@{|/address/delete/${address.id}|}">삭제</a>
+
+</body>
+</html>

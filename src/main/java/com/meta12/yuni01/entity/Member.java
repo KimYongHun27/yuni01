@@ -14,7 +14,7 @@ public class Member {
 //    @Column(name = "memberNo") 실제 DB 테이블에 memberNo로 저장된다.
     private long id;
 
-    //@Column(name = "username", insertable = true, updatable=false, length = 50, nullable = false, unique = true)
+    @Column(name = "username", insertable = true, updatable=false, length = 50, nullable = false, unique = true)
     private String username;
 
     private String password;

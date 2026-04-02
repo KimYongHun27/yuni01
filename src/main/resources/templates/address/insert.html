@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Insert Page</title>
+</head>
+<body>
+<h1>주소 등록</h1>
+
+<form name="InsertForm" method="post" action="/address/insertProc">
+    <fieldset>
+        이름 : <input type="text" name="name"><br>
+        전화번호 :<input type="text" name="phone"><br>
+        주소 :<input type="text" name="address"><br>
+        이메일 : <input type="text" name="email"><br>
+
+    <button type="submit">등록하기</button>
+    <button type="button" onclick="location.href='/address/list';">목록</button>
+    </fieldset>
+</form>
+</body>
+</html>

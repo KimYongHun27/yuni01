@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete Page</title>
+</head>
+<body>
+<form name="DeleteForm" method="post" action="/memo/deleteProc">
+    <fieldset>
+        <legend>메모 삭제</legend>
+        <input type="hidden" name="id" th:value="${memo.id}"><br>
+        제목 : <span th:text="${memo.subject}"></span><br>
+        내용 : <span th:text="${memo.content}"></span><br>
+        작성자 : <span th:text="${memo.writer}"></span><br>
+
+        <button type="submit">메모 삭제</button>
+        <button type="button" th:onclick="|location.href='/memo/list';">목록</button>
+    </fieldset>
+</form>
+</body>
+</html>
+
