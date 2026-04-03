@@ -19,11 +19,13 @@
 주소4 :<span th:text="${member.address4}"></span><br>
 등급 :<span th:text="${member.grade}"></span><br>
 
-<button type="button" onclick="location.href ='/member/list';">뒤로가기</button>
+<button type="button" th:onclick="|location.href='@{/member/list}'|">목록</button>
+<button type="button" th:onclick="|location.href='@{/member/update/{id}(id=${member.id})}'|">수정</button>
+<button type="button" th:onclick="|location.href='@{/member/delete/{id}(id=${member.id})}'|">삭제</button>
 
-<a href="/member/list">목록</a>
-<a th:href="@{|/member/update/${member.id}|}">수정</a>
-<a th:href="@{|/member/delete/${member.id}|}">삭제</a>
+<!--<a href="/member/list">목록</a>-->
+<!--<a th:href="@{|/member/update/${member.id}|}">수정</a>-->
+<!--<a th:href="@{|/member/delete/${member.id}|}">삭제</a>-->
 
 
 </body>

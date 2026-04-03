@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Page</title>
+</head>
+<body>
+<form name="Form" method="post" action="/qna/updateProc">
+    <fieldset>
+        <legend>방명록 수정</legend>
+        <input type="hidden" name="id" th:value="${qna.id}"><br>
+        이름 : <input type="text" name="name" th:value="${qna.name}"></input><br>
+        내용 : <textarea name="content" style="width:300px; height:500px;">[[${qna.content}]]</textarea><br>
+
+        <button type="submit">정보수정</button>
+        <button type="button" th:onclick="|location.href='@{/qna/list}'|">뒤로가기</button>
+    </fieldset>
+</form>
+</body>
+</html>

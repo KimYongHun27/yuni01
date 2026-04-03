@@ -15,7 +15,7 @@
         이메일 : <input type="text" name="email"><br>
 
     <button type="submit">등록하기</button>
-    <button type="button" onclick="location.href='/address/list';">목록</button>
+        <button type="button" th:onclick="|location.href='@{/address/list}'|">목록</button>
     </fieldset>
 </form>
 </body>

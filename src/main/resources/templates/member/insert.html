@@ -23,7 +23,7 @@
     등급 :<input type="radio" name="grade" value="일반회원" checked>일반회원&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <input type="radio" name="grade" value="관리자">관리자<br>
     <button type="submit">회원가입</button>
-    <button type="button" onclick="location.href='/member/list';">뒤로가기</button>
+        <button type="button" th:onclick="|location.href='@{/member/list}'|">목록</button>
     </fieldset>
 </form>
 </body>

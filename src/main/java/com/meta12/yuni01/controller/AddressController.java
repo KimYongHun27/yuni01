@@ -21,7 +21,7 @@ public class AddressController {
     {
         //List<Address> list = addressService.getSelectAll();
         model.addAttribute("list", addressService.getSelectAll());//java의 내용을 html에서 쓰기 위한 변환
-        return "/address/list";
+        return "address/list";
     }
 
     @GetMapping("/address/view/{id}")
@@ -38,11 +38,11 @@ public class AddressController {
             return "error/error";
         }
         model.addAttribute("address",address);
-        return "/address/view";
+        return "address/view";
     }
 
     @GetMapping("/address/insert")
-    public String insert(Model model)
+    public String insert()
     {
         return "/address/insert";
     }
@@ -61,7 +61,7 @@ public class AddressController {
             return "error/error";
         }
         model.addAttribute("address",address);
-        return "/address/update";
+        return "address/update";
     }
     @GetMapping("/address/delete/{id}")
     public String delete(
@@ -78,7 +78,7 @@ public class AddressController {
         }
 
         model.addAttribute("address",address);
-        return "/address/delete";
+        return "address/delete";
     }
 
     @PostMapping("/address/insertProc")

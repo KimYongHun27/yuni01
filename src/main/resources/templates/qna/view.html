@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>View Page</title>
+</head>
+<body>
+<h1>방명록 상세보기</h1>
+
+순번 : <span th:text="${qna.id}"></span><br>
+이름 :<span th:text="${qna.name}"></span><br>
+내용 :<span th:text="${qna.content}"></span><br>
+이메일 :<span th:text="${qna.email}"></span><br>
+
+<button type="button" th:onclick="|location.href='@{/qna/list}'|">목록</button>
+<button type="button" th:onclick="|location.href='@{/qna/update/{id}(id=${qna.id})}'|">수정</button>
+<button type="button" th:onclick="|location.href='@{/qna/delete/{id}(id=${qna.id})}'|">삭제</button>
+
+<!--<a href="/qna/list">목록</a>-->
+<!--<a th:href="@{|/qna/update/${qna.id}|}">수정</a>-->
+<!--<a th:href="@{|/qna/delete/${qna.id}|}">삭제</a>-->
+
+</body>
+</html>

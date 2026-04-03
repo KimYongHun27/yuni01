@@ -14,11 +14,13 @@
 이메일 :<span th:text="${address.email}"></span><br>
 
 
-<button type="button" onclick="location.href ='/address/list';">뒤로가기</button>
+<button type="button" th:onclick="|location.href='@{/address/list}'|">목록</button>
+<button type="button" th:onclick="|location.href='@{/address/update/{id}(id=${address.id})}'|">수정</button>
+<button type="button" th:onclick="|location.href='@{/address/delete/{id}(id=${address.id})}'|">삭제</button>
 
-<a href="/address/list">목록</a>
-<a th:href="@{|/address/update/${address.id}|}">수정</a>
-<a th:href="@{|/address/delete/${address.id}|}">삭제</a>
+<!--<a href="/address/list">목록</a>-->
+<!--<a th:href="@{|/address/update/${address.id}|}">수정</a>-->
+<!--<a th:href="@{|/address/delete/${address.id}|}">삭제</a>-->
 
 </body>
 </html>

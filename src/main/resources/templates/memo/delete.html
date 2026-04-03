@@ -14,7 +14,7 @@
         작성자 : <span th:text="${memo.writer}"></span><br>
 
         <button type="submit">메모 삭제</button>
-        <button type="button" th:onclick="|location.href='/memo/list';">목록</button>
+        <button type="button" th:onclick="|location.href='@{/memo/list}'|">목록</button>
     </fieldset>
 </form>
 </body>

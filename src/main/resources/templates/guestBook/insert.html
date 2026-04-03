@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Insert Page</title>
+</head>
+<body>
+<h1>방명록 등록</h1>
+
+<form name="InsertForm" method="post" action="/guestBook/insertProc">
+    <fieldset>
+        이름 : <input type="text" name="name"><br>
+        내용 :<textarea name="content" style="width:300px; height:500px;"></textarea><br>
+        이메일 :<input type="text" name="email"><br>
+        비밀번호 :<input type="text" name="password"><br>
+    <button type="submit">등록하기</button>
+        <button type="button" th:onclick="|location.href='@{/guestBook/list}'|">목록</button>
+    </fieldset>
+</form>
+</body>
+</html>

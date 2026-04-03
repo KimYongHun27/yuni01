@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>View Page</title>
+</head>
+<body>
+<h1>방명록 상세보기</h1>
+
+순번 : <span th:text="${guestBook.id}"></span><br>
+이름 :<span th:text="${guestBook.name}"></span><br>
+내용 :<span th:text="${guestBook.content}"></span><br>
+이메일 :<span th:text="${guestBook.email}"></span><br>
+
+<button type="button" th:onclick="|location.href='@{/guestBook/list}'|">목록</button>
+<button type="button" th:onclick="|location.href='@{/guestBook/update/{id}(id=${guestBook.id})}'|">수정</button>
+<button type="button" th:onclick="|location.href='@{/guestBook/delete/{id}(id=${guestBook.id})}'|">삭제</button>
+
+<!--<a href="/guestBook/list">목록</a>-->
+<!--<a th:href="@{|/guestBook/update/${guestBook.id}|}">수정</a>-->
+<!--<a th:href="@{|/guestBook/delete/${guestBook.id}|}">삭제</a>-->
+
+</body>
+</html>

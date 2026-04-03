@@ -13,11 +13,13 @@
 작성자 :<span th:text="${memo.writer}"></span><br>
 
 
-<button type="button" onclick="location.href ='/memo/list';">뒤로가기</button>
+<button type="button" th:onclick="|location.href='@{/memo/list}'|">목록</button>
+<button type="button" th:onclick="|location.href='@{/memo/update/{id}(id=${memo.id})}'|">수정</button>
+<button type="button" th:onclick="|location.href='@{/memo/delete/{id}(id=${memo.id})}'|">삭제</button>
 
-<a href="/memo/list">목록</a>
-<a th:href="@{|/memo/update/${memo.id}|}">수정</a>
-<a th:href="@{|/memo/delete/${memo.id}|}">삭제</a>
+<!--<a href="/memo/list">목록</a>-->
+<!--<a th:href="@{|/memo/update/${memo.id}|}">수정</a>-->
+<!--<a th:href="@{|/memo/delete/${memo.id}|}">삭제</a>-->
 
 </body>
 </html>

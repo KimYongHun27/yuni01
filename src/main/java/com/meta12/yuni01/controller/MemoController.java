@@ -24,7 +24,7 @@ public class MemoController {
     {
         //List<Memo> list = memoService.getSelectAll();
         model.addAttribute("list", memoService.getSelectAll());//java의 내용을 html에서 쓰기 위한 변환
-        return "/memo/list";
+        return "memo/list";
     }
 
     @GetMapping("/memo/view/{id}")
@@ -41,13 +41,13 @@ public class MemoController {
             return "error/error";
         }
         model.addAttribute("memo",memo);
-        return "/memo/view";
+        return "memo/view";
     }
 
     @GetMapping("/memo/insert")
     public String insert(Model model)
     {
-        return "/memo/insert";
+        return "memo/insert";
     }
 
     @GetMapping("/memo/update/{id}")
@@ -64,7 +64,7 @@ public class MemoController {
             return "error/error";
         }
         model.addAttribute("memo",memo);
-        return "/memo/update";
+        return "memo/update";
     }
     @GetMapping("/memo/delete/{id}")
     public String delete(
@@ -81,7 +81,7 @@ public class MemoController {
         }
 
         model.addAttribute("memo",memo);
-        return "/memo/delete";
+        return "memo/delete";
     }
 
     @PostMapping("/memo/insertProc")
